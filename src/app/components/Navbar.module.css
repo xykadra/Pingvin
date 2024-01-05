@@ -1,0 +1,29 @@
+.navItems li {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navItems p {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+
+}
+
+
+.navItems li:hover {
+    transform: translateY(+3px);
+    /* Adjust the value based on your preference */
+}
+
+.companyName {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+    /* Specify your preferred color */
+}
+
