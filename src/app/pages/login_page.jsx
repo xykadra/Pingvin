@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 
 
@@ -43,7 +44,7 @@ export default function LoginPage() {
 
             if (result.success) {
                 console.log('Login successful');
-                router.push('./pages/home_page');
+                router.push('/home');
             } else {
                 setShowPasswordError(true);
                 setErrorMessage(result.mesage);
@@ -64,6 +65,7 @@ export default function LoginPage() {
             password: '',
         });
     }
+
     const handleEnterKeyPress = (e) => {
         if (e.key === 'Enter') {
             handleLogin();

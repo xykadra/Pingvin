@@ -1,9 +1,17 @@
 // Navbar.js
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const handleSearch = () => {
+        console.log("Searchin for", searchTerm);
+    }
+
     return (
         <>
             <div className="w-full h-20 bg-white sticky top-0">
@@ -26,8 +34,23 @@ const Navbar = () => {
                                     <p>Logout</p>
                                 </Link>
                             </li>
-
                         </ul>
+                        <div className="flex items-center mx-auto">
+                            <input
+                                type="text"
+                                placeholder="Search books..."
+                                className="border p-2 text-black"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                            <button
+                                className="bg-black text-white px-4 py-2 rounded ml-5"
+                                onClick={handleSearch}
+                            >
+                                Search
+                            </button>
+                        </div>
+
                         <div className="ml-auto">
                             <p className={styles.companyName}>Pingvin</p>
                         </div>
