@@ -1,0 +1,64 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Čitanka 2 - Udžbenik",
+      "price": 10,
+      "image": "/assets/book-1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Čitanka 2 - Radna sveska",
+      "price": 15,
+      "image": "/assets/book-2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Matematika 2 - Udžbenik",
+      "price": 15,
+      "image": "/assets/book-3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Matematika 3 - Udžbenik",
+      "price": 15,
+      "image": "/assets/book-4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Geografija 3 - Udžbenik",
+      "price": 15,
+      "image": "/assets/book-5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Naš jezik 3 - Udžbenik",
+      "price": 15,
+      "image": "/assets/book-6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Tjelesni i zdravstveni odgoj",
+      "price": 15,
+      "image": "/assets/book-7.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Tjelesni i zdravstveni odgoj",
+      "price": 123,
+      "image": "/assets/book-7.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Tjelesni i zdravstveni odgoj",
+      "price": 1555,
+      "image": "/assets/book-7.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Tjelesni i zdravstveni odgoj",
+      "price": 10000,
+      "image": "/assets/book-7.jpg"
+    }
+  ]
+}

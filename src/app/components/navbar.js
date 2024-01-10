@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 
 import { useRouter } from "next/navigation";
+import { CartProvider } from "./CartContext";
 
 const Navbar = ({ setSearchTerm, cart }) => {
 
@@ -14,11 +15,14 @@ const Navbar = ({ setSearchTerm, cart }) => {
 
     const [searchTermLocal, setSearchTermLocal] = useState("");
 
-    const handleSearch = () => {
-        console.log("Searching for:", searchTermLocal);
-        setSearchTerm(searchTermLocal);
-    }
+    const handleSearch = (event) => {
+        const input = event.target.value;
+        setSearchTerm(input);
+        setSearchTermLocal(input);
 
+        // console.log("Searching for:", searchTermLocal);
+        // setSearchTerm(searchTermLocal);
+    }
 
 
 
@@ -34,14 +38,19 @@ const Navbar = ({ setSearchTerm, cart }) => {
                                 </Link>
                             </li>
                             <li>
-
+                                <Link href="/about">
+                                    <p>About</p>
+                                </Link>
                             </li>
-                            <Link href={{
-                                pathname: '/cart',
-                                query: {serializedCart}
-                            }}>
-                                <p>Cart</p>
-                            </Link>
+
+
+                            <li>
+          
+                                <Link href="/cart">
+                                    <p>Selfdestruction</p>
+                                </Link>
+                    
+                            </li>
                             <li>
                                 <Link href="/">
                                     <p>Logout</p>
@@ -54,17 +63,17 @@ const Navbar = ({ setSearchTerm, cart }) => {
                                 placeholder="Search books..."
                                 className="border p-2 text-black"
                                 value={searchTermLocal}
-                                onChange={(e) => setSearchTermLocal(e.target.value)}
+                                onChange={(e) => handleSearch(e)}
                             />
-                            <button
+                            {/* <button
                                 className="bg-black text-white px-4 py-2 rounded ml-5"
                                 onClick={handleSearch}
                             >
                                 Search
-                            </button>
+                            </button> */}
                         </div>
 
-                        <div className="ml-auto">
+                        <div className="ml-auto mr-5">
                             <p className={styles.companyName}>Pingvin</p>
                         </div>
                     </div>

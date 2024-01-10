@@ -4,11 +4,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+const path = require('path');
 const port = 3001;
 
 app.use(cors({ origin: true, credentials: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Simple authentication logic
 app.post('/api/login', (req, res) => {
@@ -32,9 +34,6 @@ app.post('/api/login', (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
 
 
 //cart logic
@@ -52,4 +51,20 @@ app.post('/api/addToCart', (req, res) => {
   console.log('Updated Cart:', cartItems);
 
   res.json({ success: true, message: 'Product added to cart', cart: cartItems });
+});
+
+app.get('/api/books', async (req, res) => {
+  try {
+    const booksData = await fs.promises.readFile(path.join(__dirname, '..', 'public', 'books.json'), 'utf8');
+    const books = JSON.parse(booksData);
+    res.json(books);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error fetching images');
+  }
+});
+
+
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });
